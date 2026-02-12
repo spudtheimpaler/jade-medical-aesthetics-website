@@ -197,10 +197,18 @@
             align-items: center;
         }
 
-        .about-section img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
+        .about-image-wrapper {
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            aspect-ratio: 3 / 4;
+        }
+
+        .about-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
         }
 
         @media (max-width: 768px) {
@@ -318,6 +326,9 @@
                 <h3>Professional Care</h3>
                 <p>Welcome to Jade Medical Aesthetics. We specialize in personalized medical aesthetic treatments delivered by qualified healthcare professionals. Our approach prioritizes your safety and natural-looking results that enhance your unique features.</p>
                 <p>With extensive experience in medical aesthetics, we offer a range of specialized treatments tailored to your individual needs and goals.</p>
+            </div>
+            <div class="about-image-wrapper">
+                <img src="../images/berni-full-length.jpeg" alt="Bernice at Jade Medical Aesthetics clinic">
             </div>
         </div>
     </section>
