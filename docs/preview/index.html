@@ -85,29 +85,6 @@
             color: #555;
         }
 
-        *:focus-visible {
-            outline: 2px solid #333;
-            outline-offset: 2px;
-        }
-
-        .skip-link {
-            position: absolute;
-            top: -100%;
-            left: 16px;
-            background: #333;
-            color: #fff;
-            padding: 8px 16px;
-            border-radius: 4px;
-            z-index: 200;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            text-decoration: none;
-        }
-
-        .skip-link:focus {
-            top: 12px;
-        }
-
         .hero {
             min-height: 70vh;
             display: flex;
@@ -117,17 +94,6 @@
             text-align: center;
             background: url('../images/blank-logo.jpeg') center/cover no-repeat;
             padding: 80px 20px;
-            position: relative;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(255, 255, 255, 0.35);
-        }
-
-        .hero > * {
             position: relative;
         }
 
@@ -306,7 +272,7 @@
         }
 
         footer a {
-            color: #e8dcc8;
+            color: #d4c5a9;
             text-decoration: none;
         }
 
@@ -331,10 +297,9 @@
     </style>
 </head>
 <body>
-    <a href="#main" class="skip-link">Skip to content</a>
     <nav>
         <img src="../images/JadeMedicalAestheticsLogo.jpeg" alt="Jade Medical Aesthetics Logo" class="nav-logo">
-        <button class="hamburger" aria-label="Menu" aria-expanded="false">
+        <button class="hamburger" aria-label="Menu">
             <span></span>
             <span></span>
             <span></span>
@@ -348,7 +313,6 @@
         </div>
     </nav>
 
-    <main id="main">
     <section class="hero" id="home">
         <h1>Jade Medical Aesthetics</h1>
         <p>Professional medical aesthetics, personalised to enhance your natural beauty</p>
@@ -415,7 +379,6 @@
             <a href="https://portal.aestheticnursesoftware.com/book-online/30789" class="btn" style="margin-top: 20px;">Book Your Consultation</a>
         </div>
     </section>
-    </main>
 
     <footer>
         <div class="footer-grid">
@@ -432,7 +395,7 @@
             <div>
                 <h3>Follow Us</h3>
                 <div class="social-links">
-                    <a href="https://www.instagram.com/jade.medical.aesthetics/" target="_blank" rel="noopener noreferrer">Instagram (opens in new tab)</a>
+                    <a href="https://www.instagram.com/jade.medical.aesthetics/" target="_blank">Instagram</a>
                 </div>
             </div>
         </div>
@@ -442,15 +405,13 @@
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
         hamburger.addEventListener('click', () => {
-            const isOpen = hamburger.classList.toggle('active');
+            hamburger.classList.toggle('active');
             navLinks.classList.toggle('open');
-            hamburger.setAttribute('aria-expanded', isOpen);
         });
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
                 navLinks.classList.remove('open');
-                hamburger.setAttribute('aria-expanded', 'false');
             });
         });
     </script>
