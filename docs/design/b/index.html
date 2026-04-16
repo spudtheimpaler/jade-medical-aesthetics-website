@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style 2: Warm &amp; Natural — Jade Medical Aesthetics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:          #f5f0e8;
+      --surface:     #e8dcc8;
+      --surface2:    #d9cab2;
+      --text:        #2a2a2a;
+      --text-muted:  #5a5040;
+      --accent:      #2d5a4c;
+      --accent-lt:   #3d7a65;
+      --gold:        #c9a96e;
+      --nav-bg:      #2d5a4c;
+      --nav-text:    #f5f0e8;
+      --foot-bg:     #2d5a4c;
+      --foot-text:   #d4c5a9;
+      --btn-bg:      #2d5a4c;
+      --btn-text:    #f5f0e8;
+      --outline-col: #2d5a4c;
+      --font-h:      'Cormorant Garamond', serif;
+      --font-b:      'Montserrat', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-b);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ─── Switcher ─── */
+    .switcher {
+      position: sticky; top: 0; z-index: 300;
+      background: #ddd5c2;
+      border-bottom: 1px solid #c8c0ae;
+      padding: 0.55rem 1rem;
+      display: flex; align-items: center; gap: 0.6rem;
+      font-family: var(--font-b); font-size: 0.72rem;
+      letter-spacing: 0.03em; color: #666;
+    }
+    .sw-label { flex: 1; }
+    .swatches { display: flex; gap: 0.4rem; align-items: center; }
+    .swatch { width: 26px; height: 26px; border-radius: 50%; border: 2px solid transparent; cursor: pointer; padding: 0; transition: transform 0.15s; }
+    .swatch:hover { transform: scale(1.15); }
+    .swatch.active { border-color: #333; }
+    .sw-elegant { background: conic-gradient(#1c1c1c 180deg, #c9a96e 180deg); }
+    .sw-warm    { background: conic-gradient(#2d5a4c 180deg, #f5f0e8 180deg); }
+    .sw-soft    { background: conic-gradient(#8b6f7a 180deg, #faf7f5 180deg); }
+    .back-link { color: #666; text-decoration: none; font-size: 0.72rem; white-space: nowrap; margin-left: auto; }
+    .back-link:hover { color: #333; }
+
+    /* ─── Nav ─── */
+    .nav-wrap { position: sticky; top: 37px; z-index: 200; }
+    nav {
+      background: var(--nav-bg); color: var(--nav-text);
+      padding: 0 1.5rem; display: flex; align-items: center;
+      justify-content: space-between; height: 62px;
+    }
+    .nav-logo img { height: 38px; filter: brightness(0) invert(1); }
+    .nav-links { display: none; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--nav-text); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.8; transition: opacity 0.2s; }
+    .nav-links a:hover { opacity: 1; }
+    .nav-cta { background: var(--gold); color: #2a2a2a; border: none; padding: 0.55rem 1.1rem; font-family: var(--font-b); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; text-decoration: none; display: inline-block; transition: opacity 0.2s; }
+    .nav-cta:hover { opacity: 0.85; }
+    .burger { background: none; border: none; color: var(--nav-text); cursor: pointer; padding: 0.4rem; display: flex; flex-direction: column; gap: 5px; }
+    .burger span { display: block; width: 22px; height: 1.5px; background: currentColor; }
+    .mob-menu { background: var(--nav-bg); display: none; padding: 0.75rem 1.5rem 1rem; }
+    .mob-menu.open { display: block; }
+    .mob-menu a { display: block; color: var(--nav-text); text-decoration: none; font-size: 0.82rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.7rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); opacity: 0.8; }
+    .mob-menu a:last-child { border-bottom: none; }
+    @media (min-width: 768px) { .nav-links { display: flex; } .burger { display: none; } }
+
+    /* ─── Hero Carousel ─── */
+    .hero { }
+    .hslide { display: none; }
+    .hslide.active { display: block; }
+    .hv1 { padding: 3.5rem 2rem 3rem; text-align: center; background: var(--bg); }
+    .hv1 .h-inner { max-width: 480px; margin: 0 auto; }
+    .hv2 { padding: 3rem 2rem; background: var(--bg); }
+    .hv2 .h-inner { max-width: 880px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: center; }
+    .hv2 .h-photo img { width: 100%; max-width: 240px; display: block; margin: 0 auto; aspect-ratio: 3/4; object-fit: cover; }
+    @media (min-width: 640px) { .hv2 .h-inner { grid-template-columns: 1fr 1fr; } .hv2 .h-photo img { max-width: 100%; } }
+    .hv3 { background: linear-gradient(160deg, #f0e8d8 0%, #e8dcc8 50%, #d9cab2 100%); padding: 5rem 2rem 4rem; text-align: center; position: relative; }
+    .hv3::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 40px; height: 2px; background: var(--gold); }
+    .hv3 .h-inner { max-width: 600px; margin: 0 auto; }
+    .h-title-sm { font-family: var(--font-h); font-size: clamp(1.6rem, 3.5vw, 2.3rem); line-height: 1.25; margin-bottom: 1.25rem; font-weight: 400; }
+    .h-title-lg { font-family: var(--font-h); font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.2; margin-bottom: 1.5rem; font-weight: 400; }
+    .h-title-lg em { font-style: italic; color: var(--accent); }
+    .eyebrow { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.25rem; }
+    .hero-tag { font-size: 0.9rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 2rem; }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .hero-nav { background: var(--surface); padding: 0.7rem 1rem 0.9rem; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; border-bottom: 1px solid rgba(0,0,0,0.08); }
+    .hero-nav-label { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
+    .hero-dots { display: flex; gap: 0.6rem; }
+    .hdot { width: 7px; height: 7px; border-radius: 50%; background: rgba(0,0,0,0.2); border: none; cursor: pointer; padding: 0; transition: background 0.2s, transform 0.15s; }
+    .hdot.active { background: var(--accent); transform: scale(1.3); }
+    .btn-p { background: var(--btn-bg); color: var(--btn-text); border: none; padding: 0.85rem 1.9rem; font-family: var(--font-b); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; text-decoration: none; display: inline-block; transition: opacity 0.2s; }
+    .btn-p:hover { opacity: 0.85; }
+    .btn-o { background: transparent; color: var(--outline-col); border: 1.5px solid var(--outline-col); padding: 0.85rem 1.9rem; font-family: var(--font-b); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.2s; }
+    .btn-o:hover { background: var(--outline-col); color: var(--bg); }
+
+    /* ─── Intro strip ─── */
+    .intro-strip {
+      background: var(--accent);
+      color: var(--nav-text);
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+    .intro-strip p {
+      font-family: var(--font-h);
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.7;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0.95;
+    }
+
+    /* ─── About ─── */
+    .about { background: var(--bg); padding: 5rem 2rem; }
+    .about-in { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
+    .about-img img { width: 100%; max-width: 300px; display: block; margin: 0 auto; object-fit: cover; aspect-ratio: 3/4; }
+    .about-eyebrow { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.9rem; }
+    .about h2 { font-family: var(--font-h); font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin-bottom: 1.25rem; line-height: 1.3; font-weight: 600; }
+    .about p { color: var(--text-muted); line-height: 1.9; margin-bottom: 1rem; font-size: 0.88rem; }
+    .creds { display: flex; flex-direction: column; gap: 0.55rem; margin-top: 1.75rem; }
+    .cred { display: flex; align-items: center; gap: 0.75rem; font-size: 0.82rem; color: var(--text); }
+    .cred::before { content: '✓'; color: var(--accent); font-size: 0.8rem; }
+    @media (min-width: 768px) { .about-in { grid-template-columns: 3fr 2fr; } }
+
+    /* ─── Values ─── */
+    .values { background: var(--surface); padding: 5rem 2rem; }
+    .sec-head { text-align: center; margin-bottom: 3rem; }
+    .sec-ey { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+    .sec-h { font-family: var(--font-h); font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 600; }
+    .values-grid { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+    .value-card { background: var(--bg); padding: 1.75rem; border-radius: 2px; }
+    .value-card h3 { font-family: var(--font-h); font-size: 1.2rem; font-weight: 600; margin-bottom: 0.6rem; color: var(--accent); }
+    .value-card p { color: var(--text-muted); font-size: 0.86rem; line-height: 1.8; }
+    @media (min-width: 600px) { .values-grid { grid-template-columns: 1fr 1fr; } }
+
+    /* ─── Treatments ─── */
+    .treatments { background: var(--bg); padding: 5rem 2rem; }
+    .treat-grid { max-width: 960px; margin: 2rem auto 0; display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+    .treat-card { background: var(--surface); padding: 1.75rem; border-left: 3px solid var(--gold); }
+    .treat-card h3 { font-family: var(--font-h); font-size: 1.2rem; font-weight: 600; margin-bottom: 0.65rem; }
+    .treat-card p { color: var(--text-muted); font-size: 0.84rem; line-height: 1.8; margin-bottom: 1.1rem; }
+    .treat-price { font-size: 0.78rem; font-weight: 600; color: var(--accent); letter-spacing: 0.04em; margin-bottom: 1.1rem; }
+    .treat-link { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
+    @media (min-width: 600px) { .treat-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1024px) { .treat-grid { grid-template-columns: repeat(4,1fr); } }
+
+    /* ─── Reviews ─── */
+    .reviews { background: var(--surface); padding: 5rem 2rem; }
+    .review-grid { max-width: 960px; margin: 2rem auto 0; display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+    .review { background: var(--bg); padding: 1.75rem; border-radius: 2px; }
+    .review-stars { color: var(--gold); font-size: 0.72rem; letter-spacing: 0.1em; margin-bottom: 0.9rem; }
+    .review-text { font-family: var(--font-h); font-size: 1rem; line-height: 1.8; font-style: italic; margin-bottom: 1.1rem; color: var(--text); font-weight: 400; }
+    .review-author { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-muted); }
+    @media (min-width: 600px) { .review-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1024px) { .review-grid { grid-template-columns: repeat(3,1fr); } }
+
+    /* ─── Contact ─── */
+    .contact { background: var(--accent); color: var(--nav-text); padding: 5rem 2rem; }
+    .contact-in { max-width: 580px; margin: 0 auto; text-align: center; }
+    .contact .sec-ey { color: var(--gold); }
+    .contact .sec-h { color: var(--nav-text); margin-bottom: 1rem; }
+    .contact-sub { font-size: 0.87rem; opacity: 0.8; margin-bottom: 2rem; line-height: 1.8; }
+    .btn-light { background: var(--gold); color: #2a2a2a; border: none; padding: 0.85rem 1.9rem; font-family: var(--font-b); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; text-decoration: none; display: inline-block; transition: opacity 0.2s; margin-bottom: 2.5rem; }
+    .btn-light:hover { opacity: 0.85; }
+    .divider { width: 1px; height: 36px; background: rgba(255,255,255,0.2); margin: 0 auto; }
+    .cd { margin: 1.25rem 0; font-size: 0.88rem; opacity: 0.85; line-height: 1.8; }
+    .cd strong { display: block; font-size: 0.66rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.35rem; font-weight: 600; }
+    .cd a { color: inherit; text-decoration: none; }
+    .cd a:hover { text-decoration: underline; }
+
+    /* ─── Footer ─── */
+    footer { background: var(--foot-bg); color: var(--foot-text); padding: 3rem 2rem 2rem; }
+    .foot-in { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 2rem; }
+    .foot-brand img { height: 32px; filter: brightness(0) invert(1); opacity: 0.6; margin-bottom: 0.9rem; }
+    .foot-tag { font-size: 0.78rem; opacity: 0.55; line-height: 1.75; }
+    .foot-col h4 { font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.9rem; }
+    .foot-col a { display: block; color: var(--foot-text); text-decoration: none; font-size: 0.8rem; opacity: 0.65; margin-bottom: 0.5rem; transition: opacity 0.2s; }
+    .foot-col a:hover { opacity: 1; }
+    .foot-bottom { border-top: 1px solid rgba(255,255,255,0.08); margin-top: 2rem; padding-top: 1.25rem; font-size: 0.72rem; opacity: 0.35; text-align: center; }
+    @media (min-width: 600px) { .foot-in { grid-template-columns: 2fr 1fr 1fr; } }
+
+    /* ─── Feedback ─── */
+    .feedback { background: #ddd5c2; border-top: 3px solid var(--gold); padding: 3rem 1.5rem; }
+    .fb-in { max-width: 520px; margin: 0 auto; }
+    .fb-in h2 { font-family: var(--font-h); font-size: 1.5rem; margin-bottom: 0.4rem; font-weight: 600; }
+    .fb-sub { font-size: 0.83rem; color: #777; margin-bottom: 1.75rem; }
+    .fb-checks { display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 1.75rem; }
+    .fb-checks label { display: flex; align-items: center; gap: 0.7rem; font-size: 0.88rem; cursor: pointer; }
+    .fb-checks input[type="checkbox"] { width: 17px; height: 17px; accent-color: var(--accent); flex-shrink: 0; cursor: pointer; }
+    .fb-text { width: 100%; padding: 0.7rem 0.9rem; border: 1.5px solid #bbb; background: white; font-family: inherit; font-size: 0.88rem; line-height: 1.6; resize: vertical; min-height: 90px; margin-bottom: 1.25rem; }
+    .fb-text:focus { outline: none; border-color: var(--accent); }
+    .fb-btn { background: var(--accent); color: var(--nav-text); border: none; padding: 0.85rem 1.5rem; font-family: inherit; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; width: 100%; transition: opacity 0.2s; }
+    .fb-btn:hover { opacity: 0.85; }
+  </style>
+</head>
+<body>
+
+<!-- Switcher -->
+<div class="switcher">
+  <span class="sw-label">Try a different colour:</span>
+  <div class="swatches">
+    <button class="swatch sw-elegant" onclick="setTheme('elegant')" title="Elegant &amp; Refined"></button>
+    <button class="swatch sw-warm active" onclick="setTheme('warm')" title="Warm &amp; Natural"></button>
+    <button class="swatch sw-soft"    onclick="setTheme('soft')"    title="Soft &amp; Contemporary"></button>
+  </div>
+  <a href="../" class="back-link">← All styles</a>
+</div>
+
+<!-- Nav -->
+<div class="nav-wrap">
+  <nav>
+    <a href="#" class="nav-logo"><img src="../../images/JadeMedicalAestheticsLogo.jpeg" alt="Jade Medical Aesthetics"></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#treatments">Treatments</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="https://portal.aestheticnursesoftware.com/" target="_blank" rel="noopener" class="nav-cta">Book Free Consultation</a>
+    <button class="burger" onclick="document.getElementById('mob').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mob-menu" id="mob">
+    <a href="#about">About</a>
+    <a href="#treatments">Treatments</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+    <a href="https://portal.aestheticnursesoftware.com/" target="_blank" rel="noopener">Book a Free Consultation</a>
+  </div>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+
+  <!-- Variant 1: Quiet & Warm (default) -->
+  <div class="hslide active hv1">
+    <div class="h-inner">
+      <p class="eyebrow">Nurse-led Aesthetic Clinic &middot; Worcester</p>
+      <h1 class="h-title-sm">Look like yourself, only more so</h1>
+      <p class="hero-tag">Natural-looking aesthetic treatments tailored entirely to you. Free consultations, no pressure.</p>
+      <a href="https://portal.aestheticnursesoftware.com/" target="_blank" rel="noopener" class="btn-p">Book a Free Consultation</a>
+    </div>
+  </div>
+
+  <!-- Variant 2: Personal — Photo & Text -->
+  <div class="hslide hv2">
+    <div class="h-inner">
+      <div class="h-text">
+        <p class="eyebrow">Nurse-led Aesthetic Clinic &middot; Worcester</p>
+        <h1 class="h-title-sm">A nurse first.<br>An aesthetics practitioner second.</h1>
+        <p class="hero-tag">Bernice is a registered nurse prescriber offering warm, unhurried treatments at Canalside Complex, Worcester. Free consultations, no obligation.</p>
+        <a href="https://portal.aestheticnursesoftware.com/" target="_blank" rel="noopener" class="btn-p">Book a Free Consultation</a>
+      </div>
+      <div class="h-photo">
+        <img src="../../images/berni-full-length.jpeg" alt="Bernice, Registered Nurse Prescriber at Jade Medical Aesthetics">
+      </div>
+    </div>
+  </div>
+
+  <!-- Variant 3: Statement (original bold style) -->
+  <div class="hslide hv3">
+    <div class="h-inner">
+      <p class="eyebrow">Nurse-led Aesthetic Clinic &middot; Worcester</p>
+      <h1 class="h-title-lg">Look like yourself,<br><em>only more so</em></h1>
+      <p class="hero-tag">Subtle, natural-looking aesthetic treatments tailored entirely to you. Free consultations, no pressure, no rush — just Bernice, a registered nurse prescriber, giving you her full attention.</p>
+      <div class="hero-btns">
+        <a href="https://portal.aestheticnursesoftware.com/" target="_blank" rel="noopener" class="btn-p">Book a Free Consultation</a>
+        <a href="#treatments" class="btn-o">View Treatments</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carousel navigation -->
+  <div class="hero-nav">
+    <span class="hero-nav-label">Header layout — try each and see which feels right</span>
+    <div class="hero-dots">
+      <button class="hdot active" onclick="goSlide(0)"></button>
+      <button class="hdot" onclick="goSlide(1)"></button>
+      <button class="hdot" onclick="goSlide(2)"></button>
+    </div>
+  </div>
+
+</section>
+
+<!-- Intro strip -->
+<div class="intro-strip">
+  <p>"I believe aesthetic treatments should enhance who you already are — not change you into someone else. Every consultation starts with listening, and ends with a plan that's right for you."</p>
+</div>
+
+<!-- About -->
+<section class="about" id="about">
+  <div class="about-in">
+    <div class="about-content">
+      <p class="about-eyebrow">About Bernice</p>
+      <h2>A nurse first. An aesthetics practitioner second.</h2>
+      <p>I'm Bernice, the founder of Jade Medical Aesthetics and a registered nurse prescriber based at Canalside Complex in Worcester. I came to aesthetics through nursing — which means your safety and wellbeing will always come before anything else.</p>
+      <p>I set up Jade because I wanted to create a space where people feel genuinely looked after. There's no high-pressure sales here, no rushed appointments, and no cookie-cutter treatments. Just honest, expert care in a calm, relaxed environment.</p>
+      <p>Whether it's your first time considering aesthetic treatments or you're coming back for a top-up, I'll take the time to understand what you're hoping for — and give you my honest professional opinion on what will work best for you.</p>
+      <div class="creds">
+        <div class="cred">Registered Nurse Prescriber (NMC)</div>
+        <div class="cred">Fully insured &amp; regulated</div>
+        <div class="cred">Free consultations, no obligation</div>
+        <div class="cred">Nurse-led, independent clinic</div>
+        <div class="cred">Canalside Complex, Worcester WR1 2RS</div>
+      </div>
+    </div>
+    <div class="about-img">
+      <img src="../../images/berni-full-length.jpeg" alt="Bernice, Registered Nurse Prescriber at Jade Medical Aesthetics">
+    </div>
+  </div>
+</section>
+
+<!-- Values -->
+<section class="values" id="ethos">
+  <div class="sec-head">
+    <p class="sec-ey">How I work</p>
+    <h2 class="sec-h">What you can expect</h2>
+  </div>
+  <div class="values-grid">
+    <div class="value-card">
+      <h3>Safety above everything</h3>
+      <p>As a registered nurse prescriber, your health comes first. I take a full medical history before every treatment and will always tell you honestly if something isn't right for you.</p>
+    </div>
+    <div class="value-card">
+      <h3>Results that look natural</h3>
+      <p>The best aesthetic work is subtle — enhancing your features without changing who you are. My goal is for you to look like the best version of yourself, not a different person.</p>
+    </div>
+    <div class="value-card">
+      <h3>No pressure. Ever.</h3>
+      <p>Every consultation is free and completely obligation-free. I'll never push treatments you don't need. You're in control of every decision, and there's no rush.</p>
+    </div>
+    <div class="value-card">
+      <h3>Your treatment, your plan</h3>
+      <p>No two people are the same, and neither are any two treatment plans. I take time to understand your goals and create something that's tailored entirely to you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Treatments -->
+<section class="treatments" id="treatments">
+  <div class="sec-head">
+    <p class="sec-ey">What I offer</p>
+    <h2 class="sec-h">Treatments</h2>
+  </div>
+  <div class="treat-grid">
+    <div class="treat-card">
+      <h3>Anti-Wrinkle Treatments</h3>
+      <p>Anti-wrinkle injections to soften expression lines. Results take full effect over 10–14 days and are designed to look completely natural — you'll still look like you.</p>
+      <div class="treat-price">From £140</div>
+      <a href="#contact" class="treat-link">Book a consultation</a>
+    </div>
+    <div class="treat-card">
+      <h3>Dermal Fillers</h3>
+      <p>Hyaluronic acid fillers to restore volume, define features, or address deeper lines. Tailored entirely to your face and what you're hoping to achieve.</p>
+      <div class="treat-price">From £250</div>
+      <a href="#contact" class="treat-link">Book a consultation</a>
+    </div>
+    <div class="treat-card">
+      <h3>Profhilo &amp; Skin Boosters</h3>
+      <p>Deeply hydrating injectable treatments that improve skin quality, texture, and elasticity from within. A lovely, natural-looking treatment with no obvious changes.</p>
+      <div class="treat-price">From £200</div>
+      <a href="#contact" class="treat-link">Book a consultation</a>
+    </div>
+    <div class="treat-card">
+      <h3>Medical Grade Skincare</h3>
+      <p>A curated range of professional skincare products selected and tailored to your skin — to protect your investment and keep your results looking their best.</p>
+      <div class="treat-price">Consultation pricing</div>
+      <a href="#contact" class="treat-link">Book a consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="reviews" id="reviews">
+  <div class="sec-head">
+    <p class="sec-ey">In their own words</p>
+    <h2 class="sec-h">What clients say</h2>
+  </div>
+  <div class="review-grid">
+    <div class="review">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Berni was fantastic!! She was informative and calm and kind, and made me feel wonderfully looked after. It was my first time having Botox and I was able to make informed, confident decisions. The consultation is free and there is no pressure to proceed."</p>
+      <div class="review-author">Gemma Benton</div>
+    </div>
+    <div class="review">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"I'm SO happy with the results. Bernice was very professional and put me at ease. She took time to explain everything so I felt comfortable in my decision making. The clinic is a clean, relaxing space."</p>
+      <div class="review-author">Charlotte Bradford</div>
+    </div>
+    <div class="review">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"From the moment I arrived, the salon had such a calming, relaxed vibe. As a registered nurse prescriber, her knowledge and experience really shine through, and I trusted her completely throughout the process."</p>
+      <div class="review-author">Helen Strike</div>
+    </div>
+    <div class="review">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"I am a first timer for Botox and I chose Berni as my practitioner. I felt comfortable during my thorough consultation to confidently book in for the treatment. The treatment was pain free and I am over the moon with my results."</p>
+      <div class="review-author">Hollie</div>
+    </div>
+    <div class="review">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Berni soon put my nerves at ease as soon as I entered the clinic. The space is very calm and welcoming. I am incredibly happy with my treatment, the follow up and of course the results — which have been amazing."</p>
+      <div class="review-author">Laura</div>
+    </div>
+    <div class="review">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"I was quite nervous before my Botox appointment, but Bernice was amazing from start to finish. She made me feel at ease straight away, explained everything in a simple and reassuring way. I would definitely recommend!"</p>
+      <div class="review-author">James McQuillen</div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="contact-in">
+    <p class="sec-ey">Get in touch</p>
+    <h2 class="sec-h" style="margin-bottom:1rem;">Book a free consultation</h2>
+    <p class="contact-sub">All consultations are free and completely obligation-free. I'd love to hear from you.</p>
+    <a href="https://portal.aestheticnursesoftware.com/" target="_blank" rel="noopener" class="btn-light">Book Online</a>
+    <div class="divider"></div>
+    <div class="cd"><strong>Phone</strong><a href="tel:07791395033">07791 395033</a></div>
+    <div class="divider"></div>
+    <div class="cd"><strong>Email</strong><a href="mailto:bernice@jademedicalaesthetics.co.uk">bernice@jademedicalaesthetics.co.uk</a></div>
+    <div class="divider"></div>
+    <div class="cd"><strong>Address</strong>Unit 14–15, Canalside Complex<br>Lowesmoor Wharf, Worcester WR1 2RS</div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="foot-in">
+    <div class="foot-brand">
+      <img src="../../images/JadeMedicalAestheticsLogo.jpeg" alt="Jade Medical Aesthetics">
+      <p class="foot-tag">Nurse-led aesthetic treatments in Worcester. Registered Nurse Prescriber. Free consultations, no obligation.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Treatments</h4>
+      <a href="#treatments">Anti-Wrinkle</a>
+      <a href="#treatments">Dermal Fillers</a>
+      <a href="#treatments">Profhilo</a>
+      <a href="#treatments">Skincare</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contact</h4>
+      <a href="tel:07791395033">07791 395033</a>
+      <a href="mailto:bernice@jademedicalaesthetics.co.uk">Email Bernice</a>
+      <a href="https://portal.aestheticnursesoftware.com/" target="_blank" rel="noopener">Book now</a>
+    </div>
+  </div>
+  <div class="foot-bottom">© 2025 Jade Medical Aesthetics · All treatments are carried out by a registered nurse prescriber · Worcester, Worcestershire</div>
+</footer>
+
+<!-- Feedback -->
+<section class="feedback">
+  <div class="fb-in">
+    <h2>What do you think of this style?</h2>
+    <p class="fb-sub">Tick anything that feels right, add any notes, then hit send.</p>
+    <div class="fb-checks">
+      <label><input type="checkbox" id="c1"> I like the colours</label>
+      <label><input type="checkbox" id="c2"> I like how warm and welcoming it feels</label>
+      <label><input type="checkbox" id="c3"> I like the font style</label>
+      <label><input type="checkbox" id="c4"> This feels professional and trustworthy</label>
+      <label><input type="checkbox" id="c5"> This feels like me</label>
+    </div>
+    <textarea class="fb-text" id="fbNotes" placeholder="What I'd want to change about this one..."></textarea>
+    <button class="fb-btn" onclick="sendFeedback()">Send these thoughts to Mitch</button>
+  </div>
+</section>
+
+<script>
+const themes = {
+  elegant: {
+    '--bg':'#ffffff','--surface':'#f8f7f5','--text':'#1c1c1c','--text-muted':'#666',
+    '--accent':'#c9a96e','--accent-lt':'#d4b47a','--gold':'#c9a96e',
+    '--nav-bg':'#1c1c1c','--nav-text':'#ffffff',
+    '--foot-bg':'#1c1c1c','--foot-text':'#e0d5c0',
+    '--btn-bg':'#1c1c1c','--btn-text':'#c9a96e','--outline-col':'#1c1c1c'
+  },
+  warm: {
+    '--bg':'#f5f0e8','--surface':'#e8dcc8','--text':'#2a2a2a','--text-muted':'#5a5040',
+    '--accent':'#2d5a4c','--accent-lt':'#3d7a65','--gold':'#c9a96e',
+    '--nav-bg':'#2d5a4c','--nav-text':'#f5f0e8',
+    '--foot-bg':'#2d5a4c','--foot-text':'#d4c5a9',
+    '--btn-bg':'#2d5a4c','--btn-text':'#f5f0e8','--outline-col':'#2d5a4c'
+  },
+  soft: {
+    '--bg':'#faf7f5','--surface':'#f0e8e2','--text':'#2d2020','--text-muted':'#7a6060',
+    '--accent':'#8b6f7a','--accent-lt':'#a88496','--gold':'#d4b896',
+    '--nav-bg':'#3d2a2a','--nav-text':'#faf7f5',
+    '--foot-bg':'#3d2a2a','--foot-text':'#f0e8e2',
+    '--btn-bg':'#8b6f7a','--btn-text':'#ffffff','--outline-col':'#8b6f7a'
+  }
+};
+
+function setTheme(name) {
+  const r = document.documentElement;
+  Object.entries(themes[name]).forEach(([k,v]) => r.style.setProperty(k, v));
+  document.querySelectorAll('.swatch').forEach(s => s.classList.remove('active'));
+  document.querySelector('.sw-' + name).classList.add('active');
+  localStorage.setItem('jade-theme-b', name);
+}
+
+const saved = localStorage.getItem('jade-theme-b');
+if (saved && themes[saved]) setTheme(saved);
+
+function goSlide(n) {
+  document.querySelectorAll('.hslide').forEach((s,i) => s.classList.toggle('active', i===n));
+  document.querySelectorAll('.hdot').forEach((d,i) => d.classList.toggle('active', i===n));
+}
+
+function sendFeedback() {
+  const labels = ['I like the colours','I like how warm and welcoming it feels','I like the font style','This feels professional and trustworthy','This feels like me'];
+  const ticked = [1,2,3,4,5].filter(i => document.getElementById('c'+i).checked).map(i => '✓ '+labels[i-1]);
+  const notes = document.getElementById('fbNotes').value.trim();
+  const body = ['Style: Warm & Natural (Style 2)','', ticked.length ? 'What I liked:' : 'Nothing ticked.', ...ticked, '', notes ? 'Notes: '+notes : ''].filter(Boolean).join('\n');
+  window.location.href = 'mailto:spudtheimpaler@gmail.com?subject='+encodeURIComponent('Jade Website — Thoughts on Style 2: Warm & Natural')+'&body='+encodeURIComponent(body);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jade Medical Aesthetics — Website Styles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #f4f1ec;
+      color: #1c1c1c;
+      min-height: 100vh;
+      padding: 0 0 4rem;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1.5rem 2.5rem;
+    }
+
+    header img {
+      max-width: 100px;
+      display: block;
+      margin: 0 auto 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.75rem, 5vw, 2.5rem);
+      letter-spacing: 0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      color: #777;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+    }
+
+    .rule {
+      width: 40px;
+      height: 1px;
+      background: #c9a96e;
+      margin: 1.5rem auto 0;
+    }
+
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      max-width: 440px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:active { transform: scale(0.99); }
+
+    @media (hover: hover) {
+      .card:hover { transform: translateY(-3px); box-shadow: 0 6px 28px rgba(0,0,0,0.13); }
+    }
+
+    .card-palette {
+      height: 72px;
+      display: flex;
+    }
+
+    .card-palette span { flex: 1; }
+
+    /* Style A palette */
+    .a-p1 { background: #1c1c1c; }
+    .a-p2 { background: #ffffff; }
+    .a-p3 { background: #c9a96e; }
+
+    /* Style B palette */
+    .b-p1 { background: #2d5a4c; }
+    .b-p2 { background: #f5f0e8; }
+    .b-p3 { background: #d4c5a9; }
+
+    /* Style C palette */
+    .c-p1 { background: #faf7f5; }
+    .c-p2 { background: #8b6f7a; }
+    .c-p3 { background: #d4b896; }
+
+    .card-body { padding: 1.25rem 1.5rem 1.75rem; }
+
+    .card-number {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 0.35rem;
+    }
+
+    .card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.6rem;
+      color: #1c1c1c;
+    }
+
+    .card-desc {
+      font-size: 0.82rem;
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 1.1rem;
+    }
+
+    .card-cta {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: #1c1c1c;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1rem 0;
+      font-size: 0.75rem;
+      color: #aaa;
+      letter-spacing: 0.03em;
+    }
+
+    @media (min-width: 500px) {
+      .cards { max-width: 500px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="../images/JadeMedicalAestheticsLogo.jpeg" alt="Jade Medical Aesthetics">
+    <h1>Jade Medical Aesthetics</h1>
+    <p class="subtitle">Three different looks — which feels right?</p>
+    <div class="rule"></div>
+  </header>
+
+  <div class="cards">
+
+    <a class="card" href="a/">
+      <div class="card-palette">
+        <span class="a-p1"></span>
+        <span class="a-p2"></span>
+        <span class="a-p3"></span>
+      </div>
+      <div class="card-body">
+        <div class="card-number">Style 1</div>
+        <div class="card-title">Elegant &amp; Refined</div>
+        <p class="card-desc">Clean and striking. White with black and gold — a polished, high-end look with your credentials front and centre.</p>
+        <span class="card-cta">Take a look →</span>
+      </div>
+    </a>
+
+    <a class="card" href="b/">
+      <div class="card-palette">
+        <span class="b-p1"></span>
+        <span class="b-p2"></span>
+        <span class="b-p3"></span>
+      </div>
+      <div class="card-body">
+        <div class="card-number">Style 2</div>
+        <div class="card-title">Warm &amp; Natural</div>
+        <p class="card-desc">Soft greens and creams — warm and welcoming, with an organic, natural feel. Puts your personal story at the heart of the page.</p>
+        <span class="card-cta">Take a look →</span>
+      </div>
+    </a>
+
+    <a class="card" href="c/">
+      <div class="card-palette">
+        <span class="c-p1"></span>
+        <span class="c-p2"></span>
+        <span class="c-p3"></span>
+      </div>
+      <div class="card-body">
+        <div class="card-number">Style 3</div>
+        <div class="card-title">Soft &amp; Contemporary</div>
+        <p class="card-desc">Blush and mauve tones — gentle and approachable. Ideal for first-timers who might feel a little nervous about taking the step.</p>
+        <span class="card-cta">Take a look →</span>
+      </div>
+    </a>
+
+  </div>
+
+  <footer>
+    Use the feedback form at the bottom of each style to share your thoughts.
+  </footer>
+
+</body>
+</html>
