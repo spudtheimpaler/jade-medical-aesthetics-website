@@ -190,6 +190,12 @@
     .fb-text:focus { outline: none; border-color: var(--accent); }
     .fb-btn { background: var(--accent); color: white; border: none; padding: 0.85rem 1.5rem; font-family: inherit; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; width: 100%; transition: opacity 0.2s; border-radius: 40px; }
     .fb-btn:hover { opacity: 0.85; }
+    .fb-edit-note { font-size: 0.75rem; color: #888; font-style: italic; margin-bottom: 1.25rem; }
+
+    /* ─── Inline editing ─── */
+    [contenteditable="true"] { outline: none; cursor: text; border-radius: 2px; }
+    [contenteditable="true"]:hover { text-decoration-line: underline; text-decoration-style: dashed; text-decoration-color: rgba(0,0,0,0.22); text-underline-offset: 4px; }
+    [contenteditable="true"]:focus { background: rgba(0,0,0,0.03); outline: 1px dashed rgba(0,0,0,0.18); outline-offset: 4px; }
 
     /* ─── Shared section header ─── */
     .sec-head { text-align: center; margin-bottom: 2.5rem; }
@@ -249,8 +255,8 @@
   <div class="hslide active hv1">
     <div class="h-inner">
       <p class="eyebrow">Aesthetic Nurse Prescriber &middot; Worcester</p>
-      <h1 class="h-title-sm">Feel exactly like yourself</h1>
-      <p class="hero-tag">Gentle, natural-looking aesthetic treatments. First-timers always welcome — free consultations, no pressure.</p>
+      <h1 class="h-title-sm" contenteditable="true" data-field="Header 1 — headline">Feel exactly like yourself</h1>
+      <p class="hero-tag" contenteditable="true" data-field="Header 1 — tagline">Gentle, natural-looking aesthetic treatments. First-timers always welcome — free consultations, no pressure.</p>
       <a href="https://portal.aestheticnursesoftware.com/" target="_blank" rel="noopener" class="btn-p">Book a Free Consultation</a>
     </div>
   </div>
@@ -260,8 +266,8 @@
     <div class="h-inner">
       <div class="h-text">
         <p class="eyebrow">Aesthetic Nurse Prescriber &middot; Worcester</p>
-        <h1 class="h-title-sm">Gentle treatments.<br>Real results.</h1>
-        <p class="hero-tag">Bernice is a registered nurse prescriber. She takes the time to understand what you're hoping for and gives you her honest professional opinion. Free consultations always.</p>
+        <h1 class="h-title-sm" contenteditable="true" data-field="Header 2 — headline">Gentle treatments.<br>Real results.</h1>
+        <p class="hero-tag" contenteditable="true" data-field="Header 2 — tagline">Bernice is a registered nurse prescriber. She takes the time to understand what you're hoping for and gives you her honest professional opinion. Free consultations always.</p>
         <a href="https://portal.aestheticnursesoftware.com/" target="_blank" rel="noopener" class="btn-p">Book a Free Consultation</a>
       </div>
       <div class="h-photo">
@@ -275,8 +281,8 @@
     <div class="hv3-bg"></div>
     <div class="h-inner">
       <p class="eyebrow">Aesthetic Nurse Prescriber &middot; Worcester</p>
-      <h1 class="h-title-lg">Feel <em>exactly</em><br>like yourself</h1>
-      <p class="hero-tag">Gentle, natural-looking aesthetic treatments by a registered nurse prescriber. First-timers always welcome — free consultations, no pressure.</p>
+      <h1 class="h-title-lg" contenteditable="true" data-field="Header 3 — headline">Feel <em>exactly</em><br>like yourself</h1>
+      <p class="hero-tag" contenteditable="true" data-field="Header 3 — tagline">Gentle, natural-looking aesthetic treatments by a registered nurse prescriber. First-timers always welcome — free consultations, no pressure.</p>
       <div class="hero-btns">
         <a href="https://portal.aestheticnursesoftware.com/" target="_blank" rel="noopener" class="btn-p">Book a Free Consultation</a>
         <a href="#reassurance" class="btn-o">Not sure yet?</a>
@@ -290,23 +296,23 @@
 <!-- Reassurance -->
 <section class="reassurance" id="reassurance">
   <div class="reassurance-in">
-    <h2>Thinking about it but <em>not quite sure?</em></h2>
+    <h2 contenteditable="true" data-field="FAQ — heading">Thinking about it but <em>not quite sure?</em></h2>
     <div class="faq-list">
       <div class="faq-item">
-        <div class="faq-q">Will it look obvious or unnatural?</div>
-        <div class="faq-a">This is the most common concern, and it's a completely fair one. The treatments I offer are designed to be subtle — enhancing your features rather than changing them. Many of my clients' friends don't even notice they've had anything done; they just say they look well-rested or refreshed.</div>
+        <div class="faq-q" contenteditable="true" data-field="FAQ 1 — question">Will it look obvious or unnatural?</div>
+        <div class="faq-a" contenteditable="true" data-field="FAQ 1 — answer">This is the most common concern, and it's a completely fair one. The treatments I offer are designed to be subtle — enhancing your features rather than changing them. Many of my clients' friends don't even notice they've had anything done; they just say they look well-rested or refreshed.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Is it safe? Who will be doing it?</div>
-        <div class="faq-a">I'm Bernice, a registered nurse prescriber — which means I'm medically trained, NMC-registered, and fully insured. I take a full health history before every treatment. Your safety isn't just a priority, it's the whole foundation of how I work.</div>
+        <div class="faq-q" contenteditable="true" data-field="FAQ 2 — question">Is it safe? Who will be doing it?</div>
+        <div class="faq-a" contenteditable="true" data-field="FAQ 2 — answer">I'm Bernice, a registered nurse prescriber — which means I'm medically trained, NMC-registered, and fully insured. I take a full health history before every treatment. Your safety isn't just a priority, it's the whole foundation of how I work.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">What if I come to a consultation and decide it's not for me?</div>
-        <div class="faq-a">That's absolutely fine. The consultation is free and there's zero pressure to proceed. Plenty of people come for a chat, ask their questions, and decide they'd like more time to think. That's exactly what the consultation is for.</div>
+        <div class="faq-q" contenteditable="true" data-field="FAQ 3 — question">What if I come to a consultation and decide it's not for me?</div>
+        <div class="faq-a" contenteditable="true" data-field="FAQ 3 — answer">That's absolutely fine. The consultation is free and there's zero pressure to proceed. Plenty of people come for a chat, ask their questions, and decide they'd like more time to think. That's exactly what the consultation is for.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">Will it hurt?</div>
-        <div class="faq-a">Most clients find treatments surprisingly comfortable. I work carefully and take my time — several clients have described their treatment as "virtually pain free". I'll always talk you through what to expect before we start.</div>
+        <div class="faq-q" contenteditable="true" data-field="FAQ 4 — question">Will it hurt?</div>
+        <div class="faq-a" contenteditable="true" data-field="FAQ 4 — answer">Most clients find treatments surprisingly comfortable. I work carefully and take my time — several clients have described their treatment as "virtually pain free". I'll always talk you through what to expect before we start.</div>
       </div>
     </div>
     <div class="reassurance-cta">
@@ -323,10 +329,10 @@
     </div>
     <div class="about-content">
       <p class="sec-ey">About Bernice</p>
-      <h2 class="sec-h">A nurse first</h2>
-      <p>I'm Bernice — a registered nurse prescriber and the founder of Jade Medical Aesthetics. I came to aesthetics through nursing, which means patient safety and wellbeing are the foundation of everything I do.</p>
-      <p>I set up Jade because I wanted to create a place where people feel genuinely looked after — especially those who are trying something for the first time. No rush, no pressure, no sales tactics. Just a proper conversation about what you're hoping for, followed by expert, careful treatment.</p>
-      <p>I'm based at Canalside Complex in Worcester and take new clients by consultation. Come and meet me — there's no obligation to book anything.</p>
+      <h2 class="sec-h" contenteditable="true" data-field="About — heading">A nurse first</h2>
+      <p contenteditable="true" data-field="About — para 1">I'm Bernice — a registered nurse prescriber and the founder of Jade Medical Aesthetics. I came to aesthetics through nursing, which means patient safety and wellbeing are the foundation of everything I do.</p>
+      <p contenteditable="true" data-field="About — para 2">I set up Jade because I wanted to create a place where people feel genuinely looked after — especially those who are trying something for the first time. No rush, no pressure, no sales tactics. Just a proper conversation about what you're hoping for, followed by expert, careful treatment.</p>
+      <p contenteditable="true" data-field="About — para 3">I'm based at Canalside Complex in Worcester and take new clients by consultation. Come and meet me — there's no obligation to book anything.</p>
       <div class="creds">
         <div class="cred">Registered Nurse Prescriber (NMC)</div>
         <div class="cred">Fully insured &amp; regulated</div>
@@ -346,27 +352,27 @@
   </div>
   <div class="treat-grid">
     <div class="treat-card">
-      <h3>Anti-Wrinkle Treatments</h3>
+      <h3 contenteditable="true" data-field="Treatment 1 — name">Anti-Wrinkle Treatments</h3>
       <span class="treat-price">From £140</span>
-      <p>The most popular treatment — softens lines and wrinkles with a result that takes full effect over 10–14 days. Natural-looking, subtle, and reversible over time.</p>
+      <p contenteditable="true" data-field="Treatment 1 — description">The most popular treatment — softens lines and wrinkles with a result that takes full effect over 10–14 days. Natural-looking, subtle, and reversible over time.</p>
       <a href="#contact" class="treat-link">Book a consultation</a>
     </div>
     <div class="treat-card">
-      <h3>Dermal Fillers</h3>
+      <h3 contenteditable="true" data-field="Treatment 2 — name">Dermal Fillers</h3>
       <span class="treat-price">From £250</span>
-      <p>Hyaluronic acid fillers to restore volume or define features. Results are tailored entirely to your face — nothing is done that isn't right for you.</p>
+      <p contenteditable="true" data-field="Treatment 2 — description">Hyaluronic acid fillers to restore volume or define features. Results are tailored entirely to your face — nothing is done that isn't right for you.</p>
       <a href="#contact" class="treat-link">Book a consultation</a>
     </div>
     <div class="treat-card">
-      <h3>Profhilo &amp; Skin Boosters</h3>
+      <h3 contenteditable="true" data-field="Treatment 3 — name">Profhilo &amp; Skin Boosters</h3>
       <span class="treat-price">From £200</span>
-      <p>An injectable hydration treatment that improves skin quality and glow from within — no change to your features, just healthier, more radiant skin.</p>
+      <p contenteditable="true" data-field="Treatment 3 — description">An injectable hydration treatment that improves skin quality and glow from within — no change to your features, just healthier, more radiant skin.</p>
       <a href="#contact" class="treat-link">Book a consultation</a>
     </div>
     <div class="treat-card">
-      <h3>Medical Grade Skincare</h3>
+      <h3 contenteditable="true" data-field="Treatment 4 — name">Medical Grade Skincare</h3>
       <span class="treat-price">Consultation pricing</span>
-      <p>Professional skincare selected and tailored to your skin type and concerns — to support and extend your treatment results at home.</p>
+      <p contenteditable="true" data-field="Treatment 4 — description">Professional skincare selected and tailored to your skin type and concerns — to support and extend your treatment results at home.</p>
       <a href="#contact" class="treat-link">Book a consultation</a>
     </div>
   </div>
@@ -465,6 +471,7 @@
       <label><input type="checkbox" id="c5"> This feels like me</label>
     </div>
     <textarea class="fb-text" id="fbNotes" placeholder="What I'd want to change about this one..."></textarea>
+    <p class="fb-edit-note">Any text you've changed on the page will be included in your email automatically.</p>
     <button class="fb-btn" onclick="sendFeedback()">Send these thoughts to Mitch</button>
   </div>
 </section>
@@ -514,9 +521,23 @@ function sendFeedback() {
   const labels = ['I like the colours','I like how gentle and approachable it feels','I like the font style','This feels professional and trustworthy','This feels like me'];
   const ticked = [1,2,3,4,5].filter(i => document.getElementById('c'+i).checked).map(i => '✓ '+labels[i-1]);
   const notes = document.getElementById('fbNotes').value.trim();
-  const body = ['Style: Soft & Contemporary (Style 3)','', ticked.length ? 'What I liked:' : 'Nothing ticked.', ...ticked, '', notes ? 'Notes: '+notes : ''].filter(Boolean).join('\n');
+  const edits = [];
+  document.querySelectorAll('[contenteditable][data-field]').forEach(el => {
+    edits.push(el.dataset.field + ':\n"' + el.textContent.trim() + '"');
+  });
+  const body = [
+    'Style: Soft & Contemporary (Style 3)', '',
+    ticked.length ? 'What I liked:' : 'Nothing ticked.',
+    ...ticked,
+    notes ? '\nNotes: ' + notes : '',
+    '\n── Text on the page ──',
+    ...edits
+  ].filter(s => s !== '').join('\n');
   window.location.href = 'mailto:spudtheimpaler@gmail.com?subject='+encodeURIComponent('Jade Website — Thoughts on Style 3: Soft & Contemporary')+'&body='+encodeURIComponent(body);
 }
+document.querySelectorAll('[contenteditable]').forEach(el => {
+  el.addEventListener('keydown', e => { if (e.key === 'Enter') e.preventDefault(); });
+});
 </script>
 </body>
 </html>

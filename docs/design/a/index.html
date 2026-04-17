@@ -313,6 +313,12 @@
       width: 100%; transition: opacity 0.2s;
     }
     .fb-btn:hover { opacity: 0.85; }
+    .fb-edit-note { font-size: 0.75rem; color: #888; font-style: italic; margin-bottom: 1.25rem; }
+
+    /* ─── Inline editing ─── */
+    [contenteditable="true"] { outline: none; cursor: text; border-radius: 2px; }
+    [contenteditable="true"]:hover { text-decoration-line: underline; text-decoration-style: dashed; text-decoration-color: rgba(0,0,0,0.22); text-underline-offset: 4px; }
+    [contenteditable="true"]:focus { background: rgba(0,0,0,0.03); outline: 1px dashed rgba(0,0,0,0.18); outline-offset: 4px; }
   </style>
 </head>
 <body>
@@ -369,8 +375,8 @@
   <div class="hslide active hv1">
     <div class="h-inner">
       <p class="eyebrow">Registered Nurse Prescriber &middot; Worcester</p>
-      <h1 class="h-title-sm">Helping you feel confident in your own skin</h1>
-      <p class="hero-tag">Natural-looking aesthetic treatments in a calm, welcoming space. Free consultations, no pressure.</p>
+      <h1 class="h-title-sm" contenteditable="true" data-field="Header 1 — headline">Helping you feel confident in your own skin</h1>
+      <p class="hero-tag" contenteditable="true" data-field="Header 1 — tagline">Natural-looking aesthetic treatments in a calm, welcoming space. Free consultations, no pressure.</p>
       <a href="https://portal.aestheticnursesoftware.com/" target="_blank" rel="noopener" class="btn-p">Book a Free Consultation</a>
     </div>
   </div>
@@ -380,8 +386,8 @@
     <div class="h-inner">
       <div class="h-text">
         <p class="eyebrow">Registered Nurse Prescriber &middot; Worcester</p>
-        <h1 class="h-title-sm">Expert care.<br>Natural results.</h1>
-        <p class="hero-tag">Bernice is a registered nurse prescriber offering personalised aesthetic treatments at Canalside Complex, Worcester. Free consultations, no obligation.</p>
+        <h1 class="h-title-sm" contenteditable="true" data-field="Header 2 — headline">Expert care.<br>Natural results.</h1>
+        <p class="hero-tag" contenteditable="true" data-field="Header 2 — tagline">Bernice is a registered nurse prescriber offering personalised aesthetic treatments at Canalside Complex, Worcester. Free consultations, no obligation.</p>
         <a href="https://portal.aestheticnursesoftware.com/" target="_blank" rel="noopener" class="btn-p">Book a Free Consultation</a>
       </div>
       <div class="h-photo">
@@ -394,8 +400,8 @@
   <div class="hslide hv3">
     <div class="h-inner">
       <p class="eyebrow">Registered Nurse Prescriber &middot; Worcester</p>
-      <h1 class="h-title-lg">Confidence that<br><em>feels like you</em></h1>
-      <p class="hero-tag" style="max-width:500px;margin-left:auto;margin-right:auto;">Natural-looking aesthetic treatments in a calm, welcoming environment. Free consultations, no high-pressure sales — just expert, personalised care.</p>
+      <h1 class="h-title-lg" contenteditable="true" data-field="Header 3 — headline">Confidence that<br><em>feels like you</em></h1>
+      <p class="hero-tag" style="max-width:500px;margin-left:auto;margin-right:auto;" contenteditable="true" data-field="Header 3 — tagline">Natural-looking aesthetic treatments in a calm, welcoming environment. Free consultations, no high-pressure sales — just expert, personalised care.</p>
       <div class="hero-btns">
         <a href="https://portal.aestheticnursesoftware.com/" target="_blank" rel="noopener" class="btn-p">Book a Free Consultation</a>
         <a href="#treatments" class="btn-o">View Treatments</a>
@@ -414,10 +420,10 @@
     </div>
     <div class="about-content">
       <p class="about-eyebrow">About Bernice</p>
-      <h2>Aesthetic treatments should feel as good as they look</h2>
-      <p>I'm Bernice, a registered nurse prescriber and founder of Jade Medical Aesthetics. I set up the clinic because I believe everyone deserves to feel confident in their own skin — and that the journey to get there should be just as comfortable as the result.</p>
-      <p>Based at Canalside Complex in Worcester, I offer a full range of aesthetic treatments in a calm, unhurried environment. Every appointment begins with a thorough consultation — no pressure, no rush, and no obligation to proceed.</p>
-      <p>My background in nursing means patient safety always comes first. I take time to understand what you're looking for and offer honest, expert guidance on what will genuinely work for you.</p>
+      <h2 contenteditable="true" data-field="About — heading">Aesthetic treatments should feel as good as they look</h2>
+      <p contenteditable="true" data-field="About — para 1">I'm Bernice, a registered nurse prescriber and founder of Jade Medical Aesthetics. I set up the clinic because I believe everyone deserves to feel confident in their own skin — and that the journey to get there should be just as comfortable as the result.</p>
+      <p contenteditable="true" data-field="About — para 2">Based at Canalside Complex in Worcester, I offer a full range of aesthetic treatments in a calm, unhurried environment. Every appointment begins with a thorough consultation — no pressure, no rush, and no obligation to proceed.</p>
+      <p contenteditable="true" data-field="About — para 3">My background in nursing means patient safety always comes first. I take time to understand what you're looking for and offer honest, expert guidance on what will genuinely work for you.</p>
       <div class="creds">
         <div class="cred">Registered Nurse Prescriber (NMC)</div>
         <div class="cred">Fully insured &amp; regulated</div>
@@ -437,20 +443,20 @@
   </div>
   <div class="ethos-grid">
     <div class="ethos-item">
-      <h3>Safety first, always</h3>
-      <p>As a registered nurse prescriber, your health and safety are my absolute priority. I take a full medical history before every treatment and will always tell you honestly if something isn't right for you.</p>
+      <h3 contenteditable="true" data-field="Value 1 — title">Safety first, always</h3>
+      <p contenteditable="true" data-field="Value 1 — description">As a registered nurse prescriber, your health and safety are my absolute priority. I take a full medical history before every treatment and will always tell you honestly if something isn't right for you.</p>
     </div>
     <div class="ethos-item">
-      <h3>Natural results</h3>
-      <p>I believe the best aesthetic work is the kind nobody notices — except you. My goal is always to enhance what you have, not to change who you are.</p>
+      <h3 contenteditable="true" data-field="Value 2 — title">Natural results</h3>
+      <p contenteditable="true" data-field="Value 2 — description">I believe the best aesthetic work is the kind nobody notices — except you. My goal is always to enhance what you have, not to change who you are.</p>
     </div>
     <div class="ethos-item">
-      <h3>No pressure, ever</h3>
-      <p>Every consultation is free and completely obligation-free. I'll never push treatments you don't need or upsell during your appointment. You decide, in your own time.</p>
+      <h3 contenteditable="true" data-field="Value 3 — title">No pressure, ever</h3>
+      <p contenteditable="true" data-field="Value 3 — description">Every consultation is free and completely obligation-free. I'll never push treatments you don't need or upsell during your appointment. You decide, in your own time.</p>
     </div>
     <div class="ethos-item">
-      <h3>Personalised care</h3>
-      <p>No two faces are the same, and neither are any two treatment plans. I take time to listen to what you want and tailor everything specifically to you.</p>
+      <h3 contenteditable="true" data-field="Value 4 — title">Personalised care</h3>
+      <p contenteditable="true" data-field="Value 4 — description">No two faces are the same, and neither are any two treatment plans. I take time to listen to what you want and tailor everything specifically to you.</p>
     </div>
   </div>
 </section>
@@ -463,26 +469,26 @@
   </div>
   <div class="treat-grid">
     <div class="treat-card">
-      <h3>Anti-Wrinkle Treatments</h3>
-      <p>Treatment options to soften expression lines and smooth the skin. Results take full effect over 10–14 days and are designed to be natural and subtle — you'll still look entirely like yourself.</p>
+      <h3 contenteditable="true" data-field="Treatment 1 — name">Anti-Wrinkle Treatments</h3>
+      <p contenteditable="true" data-field="Treatment 1 — description">Treatment options to soften expression lines and smooth the skin. Results take full effect over 10–14 days and are designed to be natural and subtle — you'll still look entirely like yourself.</p>
       <div class="treat-price">From £140</div>
       <a href="#contact" class="treat-link">Book a consultation</a>
     </div>
     <div class="treat-card">
-      <h3>Dermal Fillers</h3>
-      <p>Hyaluronic acid fillers to restore volume, define features, or address deeper lines. Tailored to your face and what you're hoping to achieve.</p>
+      <h3 contenteditable="true" data-field="Treatment 2 — name">Dermal Fillers</h3>
+      <p contenteditable="true" data-field="Treatment 2 — description">Hyaluronic acid fillers to restore volume, define features, or address deeper lines. Tailored to your face and what you're hoping to achieve.</p>
       <div class="treat-price">From £250</div>
       <a href="#contact" class="treat-link">Book a consultation</a>
     </div>
     <div class="treat-card">
-      <h3>Profhilo &amp; Skin Boosters</h3>
-      <p>Deeply hydrating injectable treatments that improve skin quality and elasticity from within. Ideal for a radiant, natural glow without changing your features.</p>
+      <h3 contenteditable="true" data-field="Treatment 3 — name">Profhilo &amp; Skin Boosters</h3>
+      <p contenteditable="true" data-field="Treatment 3 — description">Deeply hydrating injectable treatments that improve skin quality and elasticity from within. Ideal for a radiant, natural glow without changing your features.</p>
       <div class="treat-price">From £200</div>
       <a href="#contact" class="treat-link">Book a consultation</a>
     </div>
     <div class="treat-card">
-      <h3>Medical Grade Skincare</h3>
-      <p>A curated range of medical-grade skincare products recommended and tailored to your skin type — to support and extend the results of your treatments.</p>
+      <h3 contenteditable="true" data-field="Treatment 4 — name">Medical Grade Skincare</h3>
+      <p contenteditable="true" data-field="Treatment 4 — description">A curated range of medical-grade skincare products recommended and tailored to your skin type — to support and extend the results of your treatments.</p>
       <div class="treat-price">Consultation pricing</div>
       <a href="#contact" class="treat-link">Book a consultation</a>
     </div>
@@ -582,6 +588,7 @@
       <label><input type="checkbox" id="c5"> This feels like me</label>
     </div>
     <textarea class="fb-text" id="fbNotes" placeholder="What I'd want to change about this one..."></textarea>
+    <p class="fb-edit-note">Any text you've changed on the page will be included in your email automatically.</p>
     <button class="fb-btn" onclick="sendFeedback()">Send these thoughts to Mitch</button>
   </div>
 </section>
@@ -634,9 +641,23 @@ function sendFeedback() {
   const labels = ['I like the colours','I like how clean and spacious it feels','I like the font style','This feels professional and trustworthy','This feels like me'];
   const ticked = [1,2,3,4,5].filter(i => document.getElementById('c'+i).checked).map(i => '✓ '+labels[i-1]);
   const notes = document.getElementById('fbNotes').value.trim();
-  const body = ['Style: Elegant & Refined (Style 1)','', ticked.length ? 'What I liked:' : 'Nothing ticked.', ...ticked, '', notes ? 'Notes: '+notes : ''].filter(Boolean).join('\n');
+  const edits = [];
+  document.querySelectorAll('[contenteditable][data-field]').forEach(el => {
+    edits.push(el.dataset.field + ':\n"' + el.textContent.trim() + '"');
+  });
+  const body = [
+    'Style: Elegant & Refined (Style 1)', '',
+    ticked.length ? 'What I liked:' : 'Nothing ticked.',
+    ...ticked,
+    notes ? '\nNotes: ' + notes : '',
+    '\n── Text on the page ──',
+    ...edits
+  ].filter(s => s !== '').join('\n');
   window.location.href = 'mailto:spudtheimpaler@gmail.com?subject='+encodeURIComponent('Jade Website — Thoughts on Style 1: Elegant & Refined')+'&body='+encodeURIComponent(body);
 }
+document.querySelectorAll('[contenteditable]').forEach(el => {
+  el.addEventListener('keydown', e => { if (e.key === 'Enter') e.preventDefault(); });
+});
 </script>
 </body>
 </html>
