@@ -316,7 +316,9 @@
     .treat-card {
       background: var(--surface); padding: 1.75rem;
       border-top: 2px solid var(--accent);
+      display: flex; flex-direction: column;
     }
+    .treat-card .treat-link { margin-top: auto; align-self: flex-start; }
     .treat-card h3 { font-family: var(--font-h); font-size: 1.2rem; margin-bottom: 0.65rem; }
     .treat-card p { color: var(--text-muted); font-size: 0.84rem; line-height: 1.8; margin-bottom: 1.1rem; }
     .treat-price { font-size: 0.78rem; font-weight: 600; color: var(--accent-dark); letter-spacing: 0.04em; margin-bottom: 1.25rem; }
