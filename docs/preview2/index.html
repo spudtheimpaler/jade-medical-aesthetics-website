@@ -393,8 +393,11 @@
     .consult-text {
       font-size: 0.64rem; letter-spacing: 0.22em;
       text-transform: uppercase; color: var(--accent-dark);
-      font-weight: 600;
+      font-weight: 600; text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: border-color 0.2s, color 0.2s;
     }
+    .consult-text:hover { color: var(--text); border-color: var(--accent); }
 
     /* ─── Contact ─── */
     .contact { background: var(--bg); padding: 6rem 2rem; }
@@ -513,7 +516,7 @@
         <line x1="16" y1="2" x2="16" y2="6"/>
       </svg>
     </div>
-    <span class="consult-text">Complimentary consultations — come chat about what&rsquo;s right for you</span>
+    <a href="https://portal.aestheticnursesoftware.com/book-online/30789" target="_blank" rel="noopener" class="consult-text">Complimentary consultations — come chat about what&rsquo;s right for you</a>
   </div>
 </div>
 
