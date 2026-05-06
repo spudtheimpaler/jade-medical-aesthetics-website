@@ -370,35 +370,6 @@
     @media (min-width: 600px) { .review-grid { grid-template-columns: 1fr 1fr; } }
     @media (min-width: 1024px) { .review-grid { grid-template-columns: repeat(3,1fr); } }
 
-    /* ─── Consult banner ─── */
-    .consult-banner {
-      background: var(--surface-alt);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 2.5rem 2rem;
-      text-align: center;
-    }
-    .consult-inner {
-      display: flex; align-items: center; justify-content: center;
-      gap: 1.25rem; flex-wrap: wrap;
-      max-width: 640px; margin: 0 auto;
-    }
-    .consult-icon {
-      width: 36px; height: 36px;
-      border: 1px solid var(--accent);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .consult-icon svg { width: 16px; height: 16px; stroke: var(--accent-dark); fill: none; stroke-width: 1.5; }
-    .consult-text {
-      font-size: 0.64rem; letter-spacing: 0.22em;
-      text-transform: uppercase; color: var(--accent-dark);
-      font-weight: 600; text-decoration: none;
-      border-bottom: 1px solid var(--border);
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .consult-text:hover { color: var(--text); border-color: var(--accent); }
-
     /* ─── Contact ─── */
     .contact { background: var(--bg); padding: 6rem 2rem; }
     .contact-in { max-width: 520px; margin: 0 auto; text-align: center; }
@@ -502,21 +473,6 @@
     <div class="hero-photo">
       <img src="../images/berni-hero.jpeg" alt="Bernice, Registered Nurse Prescriber at Jade Medical Aesthetics" loading="eager">
     </div>
-  </div>
-</div>
-
-<!-- Complimentary consultations banner -->
-<div class="consult-banner">
-  <div class="consult-inner">
-    <div class="consult-icon">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <rect x="3" y="4" width="18" height="18" rx="1"/>
-        <line x1="3" y1="9" x2="21" y2="9"/>
-        <line x1="8" y1="2" x2="8" y2="6"/>
-        <line x1="16" y1="2" x2="16" y2="6"/>
-      </svg>
-    </div>
-    <a href="https://portal.aestheticnursesoftware.com/book-online/30789" target="_blank" rel="noopener" class="consult-text">Complimentary consultations — come chat about what&rsquo;s right for you</a>
   </div>
 </div>
 
